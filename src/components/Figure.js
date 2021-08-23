@@ -11,11 +11,15 @@ const Image = styled.img`
   height: 50vh;
 `;
 
-const Figure = () => {
+const Figure = ({ wrongLetters }) => {
+  let errors = wrongLetters.length;
+  errors = errors <= 6 ? errors : (errors = 6);
+  const path = "images/" + errors + ".svg";
+
   return (
     <>
       <Wrapper id="figure-container">
-        <Image src="images/1.svg" />
+        <Image src={path} />
       </Wrapper>
     </>
   );
