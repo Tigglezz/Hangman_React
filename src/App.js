@@ -7,6 +7,12 @@ import Word from "./components/Word";
 import Popup from "./components/Popup";
 import Notification from "./components/Notification";
 import { showNotification as show, checkWin } from "./helpers/helpers";
+import styled from "styled-components";
+
+const GameContainer = styled.div`
+  position: relative;
+  margin: auto;
+`;
 
 // Random Word
 const words = ["application", "programming", "interface", "wizard"];
@@ -57,11 +63,19 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <div className="game-container">
+      <GameContainer>
         <Figure wrongLetters={wrongLetters} />
         <WrongLetters wrongLetters={wrongLetters} />
-        <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-      </div>
+      </GameContainer>
+      <Word selectedWord={selectedWord} correctLetters={correctLetters} />
+      <Popup
+        correctLetters={correctLetters}
+        wrongLetters={wrongLetters}
+        selectedWord={selectedWord}
+        setPlayable={setPlayable}
+        playAgain={playAgain}
+      />
+      <Notification showNotification={showNotification} />
     </div>
   );
 }

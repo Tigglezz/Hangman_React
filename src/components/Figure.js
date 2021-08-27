@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  background-color: whitesmoke;
+  background-color: aliceblue;
 `;
 
 const Image = styled.img`
+  transform: scale(1.6, 1.1);
   padding: 1rem;
-  width: 50vw;
-  height: 50vh;
+  width: 80vw;
+  height: 55vh;
 `;
 
 const Figure = ({ wrongLetters }) => {
@@ -18,7 +19,7 @@ const Figure = ({ wrongLetters }) => {
 
   return (
     <>
-      <Wrapper id="figure-container">
+      <Wrapper>
         <Image src={path} />
       </Wrapper>
     </>

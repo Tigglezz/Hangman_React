@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Head = styled.div`
-  background-color: lightcyan;
+  color: black;
+  text-align: center;
+  font-family: Orbitron;
 `;
 
 const Header = () => {
